@@ -1,6 +1,7 @@
 ﻿using LogicalProgramming.Celsiusandfahrenheit;
 using LogicalProgramming.DayofWeek;
 using LogicalProgramming.FibonacciSeries;
+using LogicalProgramming.MonthlyPayment;
 using LogicalProgramming.PerfectNumber;
 using LogicalProgramming.PrimeNumber;
 using LogicalProgramming.ReverseNumber;
@@ -17,7 +18,7 @@ namespace LogicalProgramming
             Console.WriteLine("Please choose 1 Program from below list");
             Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber\n6.Stopwatch");
 
-            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit");
+            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -76,6 +77,16 @@ namespace LogicalProgramming
                     f = Util1.CeltoFehrenheit(c);
                     Console.WriteLine("Temperature in Fahrenheit = " + f + "°F");
                 break;
+                case 10:
+                    Console.WriteLine("Enter the Amount: ");
+                    double principal = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter the year: ");
+                    double years = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter the InterestRate: ");
+                    double interestRate = double.Parse(Console.ReadLine());
+                    double monthlyPayment = Util2.CalculateMonthlyPayemnt(principal, years, interestRate);
+                    Console.WriteLine("Monthly payment: $" + Math.Round(monthlyPayment, 2));
+                    break;
             }
         }
     }
