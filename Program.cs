@@ -1,4 +1,5 @@
-﻿using LogicalProgramming.DayofWeek;
+﻿using LogicalProgramming.Celsiusandfahrenheit;
+using LogicalProgramming.DayofWeek;
 using LogicalProgramming.FibonacciSeries;
 using LogicalProgramming.PerfectNumber;
 using LogicalProgramming.PrimeNumber;
@@ -16,7 +17,7 @@ namespace LogicalProgramming
             Console.WriteLine("Please choose 1 Program from below list");
             Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber\n6.Stopwatch");
 
-            Console.WriteLine("8.DayofWeek");
+            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -63,7 +64,18 @@ namespace LogicalProgramming
                         Console.Error.WriteLine("Error: " + e.Message);
                     }
 
-                    break;
+                break;
+                case 9:
+                    Console.WriteLine("Enter temperature in Fahrenheit: ");
+                    double f = double.Parse(Console.ReadLine());
+                    double c = Util1.FehtoCelsius(f);
+                    Console.WriteLine("Temperature in Celsius = " + c + "°C");
+
+                    Console.WriteLine("Enter temperature in Celsius: ");
+                    c = double.Parse(Console.ReadLine());
+                    f = Util1.CeltoFehrenheit(c);
+                    Console.WriteLine("Temperature in Fahrenheit = " + f + "°F");
+                break;
             }
         }
     }
