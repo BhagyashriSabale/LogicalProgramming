@@ -6,6 +6,7 @@ using LogicalProgramming.PerfectNumber;
 using LogicalProgramming.PrimeNumber;
 using LogicalProgramming.ReverseNumber;
 using LogicalProgramming.Stopwatch;
+using LogicalProgramming.VendingMachine;
 using System.Dynamic;
 
 namespace LogicalProgramming
@@ -18,7 +19,7 @@ namespace LogicalProgramming
             Console.WriteLine("Please choose 1 Program from below list");
             Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber\n6.Stopwatch");
 
-            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment");
+            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment\n11.VendingMachine");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -86,7 +87,13 @@ namespace LogicalProgramming
                     double interestRate = double.Parse(Console.ReadLine());
                     double monthlyPayment = Util2.CalculateMonthlyPayemnt(principal, years, interestRate);
                     Console.WriteLine("Monthly payment: $" + Math.Round(monthlyPayment, 2));
-                    break;
+                break;
+                case 11:
+                    Console.WriteLine("Please enter amount: ");
+                    int amount = int.Parse(Console.ReadLine());
+                    VM vM = new VM();
+                    VM.GetMinimumNumbOfNotes(amount);
+                break;
             }
         }
     }
