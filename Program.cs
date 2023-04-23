@@ -2,6 +2,7 @@
 using LogicalProgramming.PerfectNumber;
 using LogicalProgramming.PrimeNumber;
 using LogicalProgramming.ReverseNumber;
+using LogicalProgramming.Stopwatch;
 using System.Dynamic;
 
 namespace LogicalProgramming
@@ -12,7 +13,7 @@ namespace LogicalProgramming
         {
             Console.WriteLine("Welcome Logical Programming");
             Console.WriteLine("Please choose 1 Program from below list");
-            Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber");
+            Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber\n6.Stopwatch");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -24,15 +25,19 @@ namespace LogicalProgramming
                 case 2:
                     Perfectnum perfectnum = new Perfectnum();
                     Perfectnum.Perfect();
-                    break;
+                break;
                 case 3:
                     CheckPrime checkPrime = new CheckPrime();
                     CheckPrime.Primnum();
-                    break;
+                break;
                 case 4:
                     Reverse reverse = new Reverse();
                     Reverse.Rev();
-                    break;
+                break;
+                case 6:
+                     ElapsedTime elapsedTime = new ElapsedTime();
+                     ElapsedTime.Time();
+                break;
             }
         }
     }
