@@ -5,6 +5,7 @@ using LogicalProgramming.MonthlyPayment;
 using LogicalProgramming.PerfectNumber;
 using LogicalProgramming.PrimeNumber;
 using LogicalProgramming.ReverseNumber;
+using LogicalProgramming.SquareRootofNonnegativeNum;
 using LogicalProgramming.Stopwatch;
 using LogicalProgramming.VendingMachine;
 using System.Dynamic;
@@ -19,7 +20,7 @@ namespace LogicalProgramming
             Console.WriteLine("Please choose 1 Program from below list");
             Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber\n6.Stopwatch");
 
-            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment\n11.VendingMachine");
+            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment\n11.VendingMachine\n12.SquareRoot");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -93,6 +94,13 @@ namespace LogicalProgramming
                     int amount = int.Parse(Console.ReadLine());
                     VM vM = new VM();
                     VM.GetMinimumNumbOfNotes(amount);
+                break;
+                case 12:
+                    Console.Write("Enter a non-negative number: ");
+                    c = double.Parse(Console.ReadLine());
+
+                    double sqrtC = SquareRoot.Sqrt(c);
+                    Console.WriteLine($"The square root of {c} is {sqrtC}");
                 break;
             }
         }
