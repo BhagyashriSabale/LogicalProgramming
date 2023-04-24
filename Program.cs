@@ -1,5 +1,6 @@
 ﻿using LogicalProgramming.Celsiusandfahrenheit;
 using LogicalProgramming.DayofWeek;
+using LogicalProgramming.DecimaltoBinary;
 using LogicalProgramming.FibonacciSeries;
 using LogicalProgramming.MonthlyPayment;
 using LogicalProgramming.PerfectNumber;
@@ -8,6 +9,7 @@ using LogicalProgramming.ReverseNumber;
 using LogicalProgramming.SquareRootofNonnegativeNum;
 using LogicalProgramming.Stopwatch;
 using LogicalProgramming.VendingMachine;
+using System;
 using System.Dynamic;
 
 namespace LogicalProgramming
@@ -20,7 +22,7 @@ namespace LogicalProgramming
             Console.WriteLine("Please choose 1 Program from below list");
             Console.WriteLine("1.FibonacciSeries\n2.PerfectNumber\n3.PrimeNumber\n4.ReverseNumber\n6.Stopwatch");
 
-            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment\n11.VendingMachine\n12.SquareRoot");
+            Console.WriteLine("8.DayofWeek\n9.CelsiusandFahrenheit\n10.MonthlyPayment\n11.VendingMachine\n12.SquareRoot\n13.DecimaltoBinary");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)
@@ -102,6 +104,12 @@ namespace LogicalProgramming
                     double sqrtC = SquareRoot.Sqrt(c);
                     Console.WriteLine($"The square root of {c} is {sqrtC}");
                 break;
+                case 13:
+                    Console.Write("Enter a decimal number: ");
+                    int n = int.Parse(Console.ReadLine());
+                    string binary = DectoBin.ToBinary(n);
+                    Console.WriteLine($"The binary representation of {n} is {binary}");
+                    break;
             }
         }
     }
